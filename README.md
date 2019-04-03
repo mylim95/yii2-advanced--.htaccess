@@ -2,6 +2,7 @@
 .htaccess file for yii2-advanced for those need upload file to virtual host or server. If this is not placed correctly, it will occur some file address placed wrongly
 
 1. At the root of the project (@app) add a ``.htaccess``
+
 ``.htaccess``
 
 note: Where ``admin`` - path to the ``@backend/web``.
