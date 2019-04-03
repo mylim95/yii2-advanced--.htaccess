@@ -1,7 +1,7 @@
 # yii2-advanced--.htaccess
 .htaccess file for yii2-advanced for those need upload file to virtual host or server. If this is not placed correctly, it will occur some file address placed wrongly
 
-# 1. At the root of the project (@app) add a ``.htaccess``
+1. At the root of the project (@app) add a ``.htaccess``
 <IfModule mod_rewrite.c>
     Options +FollowSymlinks
     RewriteEngine On
@@ -28,9 +28,9 @@
     RewriteRule ^.*$ frontend/web/index.php
 </IfModule>
 
-# note: Where ``admin`` - path to the ``@backend/web``.
+note: Where ``admin`` - path to the ``@backend/web``.
 
-# 2. In the @frontend/web add another ``.htaccess`` 
+2. In the @frontend/web add another ``.htaccess`` 
 RewriteEngine on
  
 # if a directory or a file exists, use it directly
@@ -40,7 +40,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # otherwise forward it to index.php
 RewriteRule . index.php
 
-# 3. In the file @frontend/config/main.php edit the url
+3. In the file @frontend/config/main.php edit the url
 'request' => [
     'baseUrl' => '',
 ],
@@ -53,8 +53,7 @@ RewriteRule . index.php
     ],
 ],
  
-
-# 4. In the folder @backend/web add the file ``.htaccess`` with the content:
+4. In the folder @backend/web add the file ``.htaccess`` with the content:
 RewriteEngine on
  
 # if a directory or a file exists, use it directly
@@ -64,7 +63,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # otherwise forward it to index.phpp
 RewriteRule . index.php
 
-# 5. In the file @backend/config/main.php add the content:
+5. In the file @backend/config/main.php add the content:
 
 'request' => [
     'baseUrl' => '/admin',
