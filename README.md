@@ -31,50 +31,19 @@
 note: Where ``admin`` - path to the ``@backend/web``.
 
 2. In the @frontend/web add another ``.htaccess`` 
-RewriteEngine on
- 
-# if a directory or a file exists, use it directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
- 
-# otherwise forward it to index.php
-RewriteRule . index.php
+
+``frontend/.htaccess``
 
 3. In the file @frontend/config/main.php edit the url
-'request' => [
-    'baseUrl' => '',
-],
-'urlManager' => [
-    'enablePrettyUrl' => true,
-    'showScriptName' => false,
-    'rules' => [
-        '' => 'site/index',                                
-        '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
-    ],
-],
+
+``frontend/config/.htaccess``
  
 4. In the folder @backend/web add the file ``.htaccess`` with the content:
-RewriteEngine on
- 
-# if a directory or a file exists, use it directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
- 
-# otherwise forward it to index.phpp
-RewriteRule . index.php
+
+``backend/.htaccess``
 
 5. In the file @backend/config/main.php add the content:
 
-'request' => [
-    'baseUrl' => '/admin',
-],
-'urlManager' => [
-    'enablePrettyUrl' => true,
-    'showScriptName' => false,
-    'rules' => [
-        '' => 'site/index',                                
-        '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
-    ],
-],
+``backend/config/.htaccess``
   
   
